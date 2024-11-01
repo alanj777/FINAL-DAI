@@ -23,8 +23,8 @@ const HomeScreen = () => {
                 )}
                 keyExtractor={item => item.id.toString()}
             />
-            <Text>Total Price: {totalPrice}</Text>
-            <Text>Average Health Score: {averageHealthScore.toFixed(2)}</Text>
+            <Text>Precio Final: {totalPrice}</Text>
+            <Text>Puntaje Aprox Saludable: {averageHealthScore.toFixed(2)}</Text>
         </View>
     );
 };

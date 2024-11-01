@@ -11,7 +11,7 @@ const DishDetail = ({ route }) => {
         <View>
             <Text>{dish.title}</Text>
             <Image source={{ uri: dish.image }} style={{ width: 100, height: 100 }} />
-            <Text>Health Score: {dish.healthScore}</Text>
+            <Text>Puntaje saludable: {dish.healthScore}</Text>
             <Text>{dish.vegan ? "Vegan" : "Non-Vegan"}</Text>
             <Button
                 title={isInMenu ? "Remove from Menu" : "Add to Menu"}
