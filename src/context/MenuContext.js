@@ -13,8 +13,18 @@ export const MenuProvider = ({ children }) => {
         setMenu((prev) => prev.filter(dish => dish.id !== id));
     };
 
+    const isMenuValid = (dish) => {
+        const veganCount = menu.filter(d => d.vegan).length;
+        const nonVeganCount = menu.length - veganCount;
+
+        if (menu.length >= 4) return false;
+        if (dish.vegan && veganCount >= 2) return false;
+        if (!dish.vegan && nonVeganCount >= 2) return false;
+        return true;
+    };
+
     return (
-        <MenuContext.Provider value={{ menu, addDish, removeDish }}>
+        <MenuContext.Provider value={{ menu, addDish, removeDish, isMenuValid }}>
             {children}
         </MenuContext.Provider>
     );
